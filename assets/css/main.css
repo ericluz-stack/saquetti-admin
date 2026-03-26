@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/*
+  Light mode only: fundo da página em cinza bem clarinho, cards brancos.
+  O seletor :root:not(.dark) garante que não afete o modo escuro.
+*/
+:root:not(.dark) {
+  --ui-bg: #f1f5f9;
+  --ui-bg-elevated: #ffffff;
+  --ui-bg-muted: #e8edf4;
+}
+
+/*
+  Dark mode: garante valores corretos mesmo após o override acima.
+  Estes são os valores padrão do Nuxt UI para slate dark restabelecidos explicitamente.
+*/
+.dark {
+  --ui-bg: #0f172a;
+  --ui-bg-elevated: #1e293b;
+  --ui-bg-muted: #1e293b;
+}
+
+/*
+  Página de login: fundo branco no painel do formulário
+  independente do tema (login nunca tem modo dark ativo em produção).
+*/
+.layout-auth {
+  --ui-bg: #ffffff;
+}
